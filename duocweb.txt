@@ -1,0 +1,25 @@
+Integrantes:
+Sergio Coyopae
+Manuel Araya
+Daniel Rojas Diaz
+
+user admin:
+duoc
+password:
+duoc
+
+http://arayacoyopaerojas.pythonanywhere.com/
+
+http://arayacoyopaerojas.pythonanywhere.com/coleccion/create
+
+http://arayacoyopaerojas.pythonanywhere.com/accounts/login/
+
+http://arayacoyopaerojas.pythonanywhere.com/accounts/logout/
+
+Usuario de Ejemplo:
+
+Usuario de Ejemplo:
+duocsito
+
+contraseña:
+duoc2019
