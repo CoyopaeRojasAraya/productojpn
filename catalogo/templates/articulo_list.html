@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Articulo List </h1>
+
+{% if articulo_list %}
+<ul>
+	{% for articulo in articulo_list %}
+	<li>
+		<a href="{{ articulo.get_absolute_url }}">{{articulo.title}}</a>({{articulo.coleccion}})
+	</li>
+	{% endfor %}
+</ul>
+{% else %}
+<p>No hay articulos</p>
+{% endif %}
+{% endblock %}

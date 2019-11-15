@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="margin-left:20px;margin-top: 20px">
+
+<h1> Articulo: {{articulo.title}}</h1>
+
+<p><strong> Colección: </strong><a href="%url 'Coleccion-detail' articulo.Coleccion.pk %">{{articulo.Coleccion}}</a></p>
+<p><strong>Código: </strong>{{articulo.codigo}</p>
+<p><strong>Resumen: </strong>> {{articulo.resumen}}</p>
+<p><strong>Categoria: </strong>> {% for Categoria in articulo.Categoria.all %}{{Categoria}}% if not forloop.last %},{% endif %}{% endfor %}</p>
+
+</div>
+{% endblock %}

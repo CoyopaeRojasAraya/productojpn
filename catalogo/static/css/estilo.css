@@ -1,0 +1,492 @@
+:root {
+    --primary: #088A85;
+    --danger: #EF5734;
+    --grey: #8E8E8E;
+    --white: #FFFFFF;
+}
+
+*,
+
+
+body{
+    font-family: arial;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+	list-style-type: none;
+	
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navbar{
+    background: var(--primary);
+	top: 0;
+	right: 0;
+	left: 0;
+    
+}
+
+.navbar-header{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--grey); 
+	
+}
+
+.navbar-menu-mobile{
+    color: var(--danger);
+    border: 1px solid var(--white);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	
+}
+
+.brand-link{
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.navbar-container{
+    position: absolute;
+    background: var(--primary);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.4s ease;
+	
+}
+
+.navbar-link{
+    color: var(--white);
+}
+
+#navbar-header:target .navbar-container{
+    height: 300px;
+}
+
+
+#navbar-header:target .open{
+    display: none;
+}
+
+#navbar-header:target .close{
+    display: flex;
+}
+
+.close{
+    display: none;
+}
+
+
+@media (min-width: 760px){
+    .navbar{
+        display: flex;
+		justify-content: space-between;
+    }
+    
+    .navbar-menu-mobile{
+        display: none;
+    }
+    
+    .navbar-container{
+        height: auto;
+        flex-direction: row;
+        position: static;
+        width: 65%;
+    }
+}
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+  body {
+    margin: 0;
+  }
+  main {
+    display: block;
+  }
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-family: 'Lobster';
+  }
+  
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  a {
+    background-color: transparent;
+  }
+
+
+.img {
+	background-image: url("/static/img/ivy.png");
+    background-size: cover;
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+}
+.title1 {
+	text-transform: uppercase;
+	margin: 2%;
+	padding: 1%;
+	text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+	display: block;
+	border-bottom: 1px solid black;
+}
+section {
+	margin: 2%;
+	text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+	border: 1px solid black;
+	background-size: auto;
+	background: #EFEEEE;
+}
+.notice {
+	text-transform: none;
+	text-align: justify;
+	font-size: 100%;
+	position: center;
+	left: 40px;
+	right: 40px;
+	border: double;
+	height: auto;
+}
+.img-responsive {
+	height: auto;
+	max-width: 100%;
+  align-content: center;
+}
+
+.navbar-brand {
+    padding: 0px;
+  }
+  .navbar-brand>img {
+    height: 8%;
+    padding: 0px;
+    width: 8%;
+  }
+  
+  
+  
+  
+  
+  
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../img/fondo1.jpg);
+    background-position: center-bottom;
+    background-size: 10%;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    font-family: arial;
+    margin-top: 80px;
+    color: #67AC6C;
+    text-shadow: 0px 0px 6px black;
+}
+
+.content-all{
+    width: 210px;
+    margin: auto;
+    perspective: 600px;
+    margin-top: 50px;
+}
+
+.content-carrousel{
+    width: 95px;   			/* aqui se juega we estaba en 100%*/
+    position: absolute;
+	margin: auto;
+    animation: rotar 15s infinite linear;
+    transform-style: preserve-3d;
+}
+
+.content-carrousel:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+
+.content-carrousel figure{
+    width: 150%;
+    height: 200px;   /* con 130px las cartas se ven bien*/
+    overflow: hidden;
+    position: absolute;
+   
+    transition: all 500ms;
+    
+}
+
+.content-carrousel figure:hover{
+    box-shadow: 0px 0px 0px 0px black;
+    transition: all 300ms;
+}
+
+.content-carrousel figure:nth-child(1){transform: rotateY(0deg) translateZ(300px);}
+.content-carrousel figure:nth-child(2){transform: rotateY(40deg) translateZ(300px);}
+.content-carrousel figure:nth-child(3){transform: rotateY(80deg) translateZ(300px);}
+.content-carrousel figure:nth-child(4){transform: rotateY(120deg) translateZ(300px);}
+.content-carrousel figure:nth-child(5){transform: rotateY(160deg) translateZ(300px);}
+.content-carrousel figure:nth-child(6){transform: rotateY(200deg) translateZ(300px);}
+.content-carrousel figure:nth-child(7){transform: rotateY(240deg) translateZ(300px);}
+.content-carrousel figure:nth-child(8){transform: rotateY(280deg) translateZ(300px);}
+.content-carrousel figure:nth-child(9){transform: rotateY(320deg) translateZ(300px);}
+.content-carrousel figure:nth-child(10){transform: rotateY(360deg) translateZ(300px);}
+
+.content-carrousel img{
+    width: 100%;
+    transition: all 300ms;
+}
+
+.content-carrousel img:hover{
+    transform: scale(1.1);
+    transition: all 500ms;
+}
+
+
+@keyframes rotar{
+    from{
+        transform: rotateY(0deg);
+    }to{
+        transform: rotateY(360deg);
+    }
+}
+
+.shared-panel{
+	position: relative;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+.shared-panel span{
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
+	font-weight: 600;
+	
+}
+.shared {
+	display: inline-block;
+	width: 30px; 
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto; 
+	padding: 0; 
+        /* Recurso incluido en la descarga del ejemplo */ 
+	margin-right: 5px; 
+	cursor: pointer;
+	border-radius: 50%;
+}
+.shared:hover{
+	opacity: 0.7;
+}
+.shared.ig {background-position: 0px 0px; background-color: #C13584;}
+.shared.fb {background-position: 0px -120px; background-color: #6081C4;}
+
+.st2{
+   border-radius: 0;
+}
+.st3{
+   border-radius: 5px;
+}
+
+/* Content Boxes
+———————————————————— */
+.content-box-blue,
+.content-box-gray,
+.content-box-purple,
+.content-box-red,
+.content-box-yellow {
+margin: 0 0 25px;
+overflow: hidden;
+padding: 20px;
+}
+
+.content-box-blue {
+background-color: #d8ecf7;
+border: 1px solid #afcde3;
+}
+
+.content-box-gray {
+background-color: #e2e2e2;
+border: 1px solid #bdbdbd;
+}
+
+.content-box-green {
+	margin: 0 0 0px;
+	overflow: hidden;
+	padding: 20px;
+background-color: #d9edc2;
+border: 1px solid #b2ce96;
+position: absolute;
+text-align: center;
+top: 1500px;
+left: 0;
+right:0;
+}
+
+.content-box-purple {
+    margin: 0 0 0px;
+	overflow: hidden;
+	padding: 20px;
+background-color: #e2e2f9;
+border: double;
+text-transform: none;
+text-align: justify;
+position: relative;
+text-align: center;
+bottom: 0;
+left: 0;
+right:0;
+
+}
+
+.content-box-red {
+background-color: #f9dbdb;
+border: 1px solid #e9b3b3;
+}
+
+.content-box-yellow {
+background-color: #fef5c4;
+border: 1px solid #fadf98;
+}
+
+.grid-container {
+  display: grid;
+  grid: 40px / auto auto auto;
+  grid-gap: 2px;
+  background-color: #2196F3;
+  padding: 10px;
+  position: relative;
+  left: 0;
+  right:0;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 2px;
+  font-size: 25px;
+}
+
+.table1 {
+	position:  absolute;
+	left: 40%;
+	right: 40%;
+	float: center;
+}
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	border: 2px solid black;
+	background: #dddddd;
+	height: auto;
+	max-width: 100%;
+    display: absolute;
+	margin-left: auto;
+	margin-right: auto;
+}
+tr:nth-child(even){
+	background-color: white;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+.inicio {
+	width: 100%;
+	margin: 2%;
+	border: 1px solid black;
+	padding: 2%;
+}
+.footer {
+	margin-bottom: 0px;
+	padding: 30px;
+	margin-left: 0px;
+	margin-right: 0px;
+  text-align: center;
+  background: #ddd;
+}
+/** galeria **/
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

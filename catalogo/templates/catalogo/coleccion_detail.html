@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{%block content%}
+<h1> Colección:{{Coleccion}}</h1>
+
+
+<div style="margin-left: :20px;margin-top: :20px">
+	<h1>Articulo {{coleccion}}</h1>
+	<p>{{coleccion.date_of_launch}}</p>
+	<dl>
+		{%for articulo in Coleccion.articulo_set.all%}
+		<dt><a href="{%url 'articulo_detail' Articulo.pk%}">{{articulo}}</a>({{Articulo.ArticuloInstance_set.all.count}})</dt>
+		<dd>{{Articulo.resumen}}</dd>
+		{%endfor%}
+	</dl>
+
+</div>
+{%endblock%}

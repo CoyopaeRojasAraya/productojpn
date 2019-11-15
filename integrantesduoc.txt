@@ -1,0 +1,30 @@
+Integrantes:
+Sergio Coyopae
+Manuel Araya
+Daniel Rojas Diaz
+
+user admin:
+duoc
+password:
+duoc
+
+http://127.0.0.1:8000/
+http://127.0.0.1:8000/coleccion/create
+
+python manage.py test catalogo.tests.test_models
+
+python manage.py test catalogo.tests.test_views
+
+python manage.py runserver
+
+http://127.0.0.1:8000/accounts/login/
+
+http://127.0.0.1:8000/accounts/logout/
+
+Usuario de Ejemplo:
+
+Usuario de Ejemplo:
+duocsito
+
+contraseña:
+duoc2019

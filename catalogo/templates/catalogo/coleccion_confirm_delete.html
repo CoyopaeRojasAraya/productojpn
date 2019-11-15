@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Delete Coleccion</h1>
+<p>Estás seguro de que quieres borrar la coleccion: {{Coleccion}}?</p>
+
+<form action="" method method="POST">
+	{% csrf_token %}
+	<input type="submit" action="" value="Si,borrar."/>
+</form>
+
+{% endblock %}

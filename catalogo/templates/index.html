@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<h1>IvyStore</h1>
+
+  <p> Bienvenido <em>IvyStore</em>, Django website </p>
+
+<h2>Contenido:</h2>
+
+  <p>La tienda tiene las siguientes cuentas:</p>
+  <ul>
+    <li><strong>Articulos:</strong> {{ num_articulo }}</li>
+    <li><strong>Total:</strong> {{ num_instances }}</li>
+    <li><strong>Total disponible:</strong> {{ num_instances_disponible }}</li>
+    <li><strong>Coleccion:</strong> {{ num_coleccion }}</li>
+    <li><strong>Numero de visitas:</strong> {{ num_visits }}</li>
+    
+  </ul>
+
+{% endblock %}
+

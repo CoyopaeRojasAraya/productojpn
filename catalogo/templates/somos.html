@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+ 
+<section>
+	<div class="title1">
+    <table >
+        <tr>
+        <th>Nombre</th>
+		<th>Cargo</th>
+		<th>Email</th>
+        </tr>
+        <tr>
+        <td>Daniel Rojas Diaz</td><td>Jefe de la tienda</td><td>dan.diaz@ivystore.cl</td>
+        </tr>
+        <tr>
+        <td>Sergio Coyopae</td><td>Sitio Web</td><td>sam.coy@ivystore.cl</td>
+        </tr>
+        <tr>
+        <td>Manuel Araya</td><td>Sitio Web</td><td>man.ara@ivystore.cl</td>
+        </tr>
+        </table>
+		<br><br><br>
+		<img class="img-responsive" src="img/ivystore.png" >
+		<br><br><br>
+        <div class="shared-panel">
+            <span>Redes Sociales</span><br>
+            <a target="_blank" href="https://www.facebook.com/IvyStoreJapan/" class="shared fb" title="Facebook"></a>	
+            <a target="_blank" href="https://www.instagram.com/ivystorechile/" class="shared ig" title="Instagram" ></a>		
+        </div>
+	</div>
+		
+</section>
+ {% endblock %}

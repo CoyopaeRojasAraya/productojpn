@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if form.errors %}
+<p>Tu usuario y password no calzan, por favor intente de nuevo.</p>
+{% endif %}
+
+{% if next %}
+	{% if user.is_authenticated %}
+	<p>Tu cuenta no tiene acceso a esta pagina. Para proceder, por favor acceda con una cuenta que posea acceso.</p>
+	{% else %}
+	<p> Por favor acceda para ver esta pagina.</p>
+	{% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+<div>
+	<td> {{form.username.label_tag}}</td>
+	<td> {{form.username}}</td>
+</div>
+<div>
+	<td> {{form.password.label_tag}}</td>
+	<td> {{form.password}}</td>
+</div>
+
+<div>
+	<input type="submit" value="login"/>
+	<input type="hidden" name="next" value="{{next}}"/>
+</div>
+</form>
+
+{#Asumiendo que tu configuraste la vista de  password reset en tu URLconf #}
+<p><a href="{% url 'password_reset' %}">¿Password Perdida?</a></p>
+{% endblock %}

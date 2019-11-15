@@ -1,0 +1,153 @@
+{% extends "base.html" %}{% load staticfiles %} 
+{% block content %}   
+
+<script>
+	
+	
+	function validarFormulario(){
+
+		var txtNombre = document.getElementById('nombre').value;
+		var txtEdad = document.getElementById('edad').value;
+		var txtCorreo = document.getElementById('correo').value;
+		var txtFecha = document.getElementById('fecha').value;
+		var cmbSelector = document.getElementById('selector').selectedIndex;
+		var chkEstado = document.getElementById('checkBox');
+		var rbtEstado = document.getElementsByName('radioButton');
+
+		var banderaRBTN = false;
+
+		//Test campo obligatorio
+		if(txtNombre == null || txtNombre.length == 0 || /^\s+$/.test(txtNombre)){
+			alert('ERROR: Ingrese información en Nombre ');
+			document.datos.nombre.focus();
+			return false;
+		}
+
+		//Test edad
+		if(txtEdad == null || txtEdad.length == 0 || isNaN(txtEdad)){
+			alert('ERROR: Debe ingresar una edad');
+			document.datos.edad.value="";
+			document.datos.edad.focus();
+			return false;
+		}
+
+		//Test correo
+		if(!(/\S+@\S+\.\S+/.test(txtCorreo))){
+			alert('ERROR: Debe escribir un correo válido');
+			document.datos.correo.value="";
+			document.datos.correo.focus();
+			return false;
+		}
+
+		//Test fecha
+		if(!isNaN(txtFecha)){
+			alert('ERROR: Debe elegir una fecha');
+			document.datos.fecha.focus();
+			return false;
+		}
+
+		//Test comboBox
+		if(cmbSelector == null || cmbSelector == 0){
+			alert('ERROR: Debe seleccionar una comida');
+			document.datos.selector.focus();
+			return false;
+		}
+
+		//Test checkBox
+		if(!chkEstado.checked){
+			alert('ERROR: Seleccione el Checkbox');
+			return false;
+		}
+
+		//Test RadioButtons
+		for(var i = 0; i < rbtEstado.length; i++){
+			if(rbtEstado[i].checked){
+				banderaRBTN = true;
+				break;
+			}
+		}
+		if(!banderaRBTN){
+			alert('ERROR: Debe elegir una opcion');
+			return false;
+		}
+
+		return true;
+	}
+
+	</script>
+</head>
+
+<body>
+
+	
+<section>
+<div class="title1">
+<h1> Formulario </h1>
+	
+	<form name="datos" action="/respuesta/" onsubmit="return validarFormulario()">
+		<label for="nom">Nombre: </label>
+		<input type="text" id="nombre" name="nombre" autofocus>
+		
+		<br><br>
+
+		<label for="ed">Edad: </label>
+		<input type="text" id="edad" name="edad" >
+		
+		<br><br>
+
+		<label for="correito">Correo electrónico: </label>
+		<input type="text" id="correo" name="correo" >
+
+		<br><br>
+		
+		<label for="fech"> Fecha: </label>
+		<input type="date" id="fecha" name="fecha">
+
+		<br><br>
+
+		<label for="selector"> Región:</label>
+		<select name="selector" id="selector" >
+			<option value="">Seleccione</option>
+			<option value="">I de Tarapacá</option>
+			<option value="">II de Antofagasta</option>
+			<option value="">III de Atacama</option>
+			<option value="">IV de Coquimbo</option>
+			<option value="">V de Valparaíso</option>
+			<option value="">VI del Libertador General Bernardo O'Higgins</option>
+			<option value="">VII del Maule</option>
+			<option value="">VIII de Concepción</option>
+			<option value="">IX de la Araucanía</option>
+			<option value="">X de Los Lagos</option>
+			<option value="">XI de Aysén del General Carlos Ibañez del Campo</option>
+			<option value="">XII de Magallanes y de la Antártica Chilena</option>
+			<option value="">Metropolitana de Santiago</option>
+			<option value="">XIV de Los Ríos</option>
+			<option value="">XV de Arica y Parinacota</option>
+			<option value="">XVI del Ñuble</option>
+		</select>
+
+		<br><br>
+
+		<label for="checkBox"> Prefiere Domicilio: </label>
+		<input type="checkbox" id="checkBox" name="checkBox"> Si
+		<input type="checkbox" id="checkBox" name="checkBox"> No
+		
+		<br><br>
+
+		<label for="radioButton"> Seleccione una opción: </label><br>
+		<input type="radio" id="radioButton" name="radioButton"> Efectivo<br>
+		<input type="radio" id="radioButton" name="radioButton"> Tarjeta Debito<br>
+		<input type="radio" id="radioButton" name="radioButton"> Tarjeta Credito
+		
+		<br><br>
+
+		<input type="submit" value="Verificar">
+		<input type="reset" value="Otro Ingreso">
+</div>
+</form>
+   
+
+</section>
+    {% endblock %}
+</body>
+</html>
